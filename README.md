@@ -1,4 +1,4 @@
-# kube-adm-demo
+# kube-Deploy
 Independent deployment solution ( GKE, VBox, AWS, Play with k8s ) of two simple multi-tier applications using Kubernetes container orchestration technology
 
 ## Deployment Solutions available:
