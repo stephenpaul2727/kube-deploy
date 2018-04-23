@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: back-end-service
+  labels:
+    app: back-end
+spec:
+  type: ClusterIP
+  selector:
+    app: redis
+    tier: back-end
+  ports:
+    - targetPort: 6379
+      port: 6379
