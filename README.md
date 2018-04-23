@@ -23,7 +23,7 @@ Independent deployment solution ( GKE, VBox, AWS, Play with k8s ) of two simple 
 7. Now you have successfully setup a kubernetes cluster and you are good to deploy applications.
 
 ### Runnning the Demo:
-1. Clone this project to the master node.
+1. Clone this project to the master node of your kubernetes cluster.
 2. If you want to set up a guest book application. please go to the Guestbook folder. If you want to set up a voting app. please go to the Votingapp folder. Do not run both of them on the same cluster.
 3. Run the deployment yaml file first and it's respective service file next. In kubernetes, we use the same command to set up a pod, service, replicaset and deployment. The way that kubernetes know which is which is by specifying the kind in the yaml file. 
 4. The command is `kubectl create -f <deployment-file.yaml>` followed by `kubectl create -f <service-file.yaml>`. If you are using a LoadBalancer Port type and you have a load balancer configured (GKE has it pre-configured), the deployment will take some time. please wait until the deployment is running and then create its respective service.
