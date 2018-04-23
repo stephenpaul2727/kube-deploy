@@ -3,12 +3,13 @@ kind: Service
 metadata:
   name: back-end-service
   labels:
-    app: back-end
+    name: back-end-service
+    app: guest-book
 spec:
   type: ClusterIP
-  selector:
-    app: redis
-    tier: back-end
   ports:
     - targetPort: 6379
       port: 6379
+  selector:
+    name: redis-pod
+    app: guest-book

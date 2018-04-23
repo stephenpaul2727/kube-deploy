@@ -1,16 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-end-deploy
+  name: front-end-deployment
   labels:
-    app: front-end
+    name: front-end-deployment
+    app: guest-book
 spec:
   template:
     metadata:
-      name: guest-book
+      name: front-end-pod
       labels:
+        name: front-end-pod
         app: guest-book
-        tier: front-end
     spec:
       containers:
         - name: guestbook
@@ -21,4 +22,3 @@ spec:
   selector:
     matchLabels:
       app: guest-book
-      tier: front-end

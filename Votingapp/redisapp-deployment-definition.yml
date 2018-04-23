@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: back-end-deploy
+  name: redis-app-deployment
   labels:
-    app: back-end
+    name: redis-app-deployment
+    app: voting-app
 spec:
   template:
     metadata:
-      name: redis
+      name: redis-pod
       labels:
-        app: redis
-        tier: back-end
+        name: redis-pod
+        app: voting-app
     spec:
       containers:
         - name: redis
-          image: redis
+          image: redis:latest
           ports:
             - containerPort: 6379
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: redis
-      tier: back-end
+      app: voting-app
