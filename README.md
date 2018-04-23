@@ -26,7 +26,7 @@ Independent deployment solution ( GKE, VBox, AWS, Play with k8s ) of two simple 
 1. Clone this project to the master node.
 2. If you want to set up a guest book application. please go to the Guestbook folder. If you want to set up a voting app. please go to the Votingapp folder. Do not run both of them on the same cluster.
 3. Run the deployment yaml file first and it's respective service file next. In kubernetes, we use the same command to set up a pod, service, replicaset and deployment. The way that kubernetes know which is which is by specifying the kind in the yaml file. 
-4. The command is `kubectl create -f <deployment-file.yaml>` followed by `kubectl create -f <service-file.yaml>`. If you are using a LoadBalancer Port type and you have a load balancer configured, the deployment will take some time. please wait until the deployment is running and then create its respective service.
+4. The command is `kubectl create -f <deployment-file.yaml>` followed by `kubectl create -f <service-file.yaml>`. If you are using a LoadBalancer Port type and you have a load balancer configured (GKE has it pre-configured), the deployment will take some time. please wait until the deployment is running and then create its respective service.
 5. You can use `kubectl get all` to see the status of the pods, deployments, replicasets etc.
 6. After you have created all pods and services for a given application (Guestbook or Votingapp), you now will have a multi-tier application.
 
